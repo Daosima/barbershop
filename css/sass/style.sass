@@ -1,0 +1,830 @@
+@import "index.sass"
+@import "shop.sass"
+
+body
+	margin: 0
+	padding: 0
+
+	font-family: "PT Sans Narrow", Arial, sans-serif
+
+	font-size: 14px
+	line-height: 24px
+	font-weight: 700
+	text-transform: uppercase
+	color: #ffffff
+
+	background-color: #0f161f
+	background-image: url("../img/main_bg.png")
+	background-position: top center
+	background-repeat: none
+
+a
+	text-decoration: none
+
+img
+	max-width: 100%
+	height: auto
+
+h2
+	font-size: 30px
+	line-height: 42px
+	font-weight: 700
+
+ul, ol
+	list-style: none
+
+
+.visually-hidden
+	position: absolute
+	width: 1px
+	height: 1px
+	margin: -1px
+	border: 0
+	padding: 0
+	white-space: nowrap
+	clip-path: inset(100%)
+	clip: rect(0 0 0 0)
+	overflow: hidden
+
+.button
+	display: inline-block
+	font: inherit
+
+	padding: 10px 30px
+	margin-right: 16px
+
+	text-align: center
+	color: #ffffff
+	vertical-align: middle
+	text-transform:	uppercase
+
+	background-color: #000000
+	border: 2px solid #000000
+
+	&:hover, &:focus, &:active
+		background-color: #663d15
+		color: #ffffff
+		border: 2px solid #000000
+
+	&.disabled
+		cursor: default
+		opacity: 0.5
+		background-color: #000000
+
+.container
+	width: 950px
+
+// sass index
+
+.main-header
+	display: flex
+	flex-direction: column
+	align-items: center
+	margin-bottom: 75px
+
+	.main-header-logo
+		order: 2
+	.main-navigation
+		display: flex
+		justify-content: center
+		flex-wrap: wrap
+		margin-bottom: 60px
+		width: 100%
+		min-height: 46px
+		font-size: 16px
+		line-height: 20px
+		color: #ffffff
+		background-color: #000000
+
+		.main-navigation-wrapper
+			width: 100%
+			.container
+				width: 940px
+				display: flex
+				justify-content: space-between
+				align-content: center
+
+
+		&__site-list, &__user-list
+			list-style: none
+			margin: 0
+			padding: 0
+		&__site-item, &__user-item
+			float: left
+		&__user-list
+			position: relative
+		&__user-item-link::before
+			content: ""
+			position: absolute
+			top: 27px
+			right: 84px
+
+			width: 16px
+			height: 18px
+
+			background-image: url(../img/svg/login.svg)
+			background-repeat: no-repeat
+			background-position: 0 0
+
+			opacity: 0.3
+		&__user-item-link
+			&:hover::before, &:focus::before, &:active::before
+				opacity: 1
+
+
+		&__site-item-link, &__user-item-link
+			display: block
+			padding: 25px 35px
+			color: #ffffff
+			a:hover, a:focus
+				background-color: #500000
+
+.feature
+	margin-bottom: 80px
+	&__list
+		display: flex
+		justify-content: space-between
+		list-style: none
+		padding: 0
+	&__item
+		text-align: center
+		width: 300px
+		.feature-item
+			&__title
+				position: relative
+				margin-bottom: 60px
+				font-size: 30px
+				line-height: 42px
+				font-weight: 700
+				&::after
+					content: ""
+					position: absolute
+					bottom: -30px
+					left: 50%
+					margin-left: -10px
+
+					width: 20px
+					height: 20px
+
+					background-color: #ffffff
+
+					transform: rotate(45deg)
+			&__text
+				text-align: center
+				margin: 0 10px
+.wrapper-colums
+	display: flex
+	justify-content: space-between
+
+	padding: 50px 80px
+	margin-bottom: 35px
+
+	color: #000000
+	background-color: #f8f5f2
+	background-image: url("../img/pattern-light.png")
+	background-image: url("../img/line.png")
+	background-position: center
+	background-repeat: no-repeat
+
+	h2
+		margin-bottom: 31px
+
+	.news
+		width: 380px
+		&__list
+			list-style: none
+			padding: 0
+			margin: 0
+		&__item
+			p
+				margin: 0
+			time
+				text-transform: none
+		&__button
+			margin-top: 33px
+	.gallery
+		width: 300px
+		height: 178px
+		margin: 0
+		border: 7px solid #ffffff
+		&__button--wrap
+			position: relative
+			width: 100%
+		&__button
+			position: absolute
+			width: 140px
+			margin: 0
+			top: 30px
+
+		&__button--back
+			left: 0
+		&__button--next
+			right: 0
+		&__content
+			background-color: #cccccc
+			border: 7px solid #ffffff
+	.contacts
+		p
+			margin: 0
+		&__button
+			margin: 28px 20px 0 0
+
+
+	.appointment
+		p
+			margin: 0
+		display: flex
+		flex-direction: column
+		width: 300px
+		&__wrap
+			display: flex
+			flex-wrap: wrap
+			justify-content: space-between
+			padding-bottom: 20px
+		&__item--wrap
+			display: flex
+			flex-direction: column
+			width: 140
+			label
+				padding-top: 10px
+				padding-bottom: 10px
+				margin-left: 17px
+			input
+				width: 140px
+				height: 43px
+				font: inherit
+				background-color: trandparent
+				border: 2px solid #000000
+				&:focus
+					border-color: #3dfd24
+				&:hover
+					border-color: #4b5dfd
+		&__button--sent
+			width: 300px
+
+.footer
+	padding: 60px 0
+	margin-top: 65px
+
+	color: #ffffff
+	background-color: #212121
+	background-image: url(../img/footer_bg.png)
+	background-position: 0 0
+	background-repeat: no-repeat
+	.container
+		.footer-wrapper
+			display: flex
+			justify-content: space-between
+
+	&__contact
+		width: 307px
+		a
+			color: #ffffff
+			text-decoration: underline
+			&:focus, &:hover
+				text-decoration: none
+	&__social
+		display: flex
+		flex-direction: column
+		text-align: center
+
+		.footer-social
+			&__list
+				display: flex
+				flex-wrap: wrap
+				text-align: center
+				list-style: none
+				padding: 0
+				margin: 0
+			&__item
+				color: #ffffff
+				width: 43px
+				height: 43px
+				background-color: #000000
+				margin: 6px
+				padding-top: 8px
+
+	&__copyright
+		display: flex
+		flex-direction: column
+		text-align: center
+		padding: 0
+		margin: 0
+		p
+			padding: 0
+			margin: 0
+		a
+			text-transform: none
+			align-items: center
+			padding-top: 8px
+			margin: 0
+			width: 140px
+			height: 43px
+
+	// sass index modal
+
+.modal
+	position: fixed
+	color: #000000
+
+	background-color: #f8f3f0
+	background: url("../img/pattern-light.png")
+	background-position: 0 0
+	background-repeat: no-repeat
+	box-shadow: 0 30px 50px rgba(0, 0, 0, 0.7)
+
+.modal-login
+	top: 120px
+	left: 50%
+
+	display: none
+
+	width: 450px
+	margin-left: -230px
+	padding: 50px 80px
+	h2
+		font-size: 30ps
+		line-height: 42px
+.login-form
+	input
+		box-sizing: border-box
+		width: 100%
+		padding: 10px 10px
+		padding-right: 40px
+
+		font: inherit
+		color: #000000
+		text-transform: uppercase
+
+		background-color: #ffffff
+		border: 2px solid #000000
+
+		&:focus, &:hover
+			border-color: #663d15
+	p
+		margin: 0
+		margin-bottom: 10px
+
+		.login-icon-user
+			background-image: url(/img/svg/user.svg)
+			background-position: 255px center
+			background-repeat: no-repeat
+		.login-icon-password
+			background-image: url(/img/svg/lock.svg)
+			background-position: 255px center
+			background-repeat: no-repeat
+		.restore
+			color: inherit
+			text-decoration: underline
+
+		&:hover, &:focus
+			text-decoration: none
+	.login-password-info
+		display: flex
+		flex-wrap: wrap
+		justify-content: space-between
+
+		margin: 14px 0
+
+		.ligin-checkbox
+			position: relative
+
+			padding-left: 30px
+
+			cursor: pointer
+			&:hover, &:focus
+				color: #663d15
+
+			input[type="checkbox"], .checkbox-indikator
+				position: absolute
+				top: 0
+				left: 0
+
+				width: 18px
+				height: 18px
+
+				border: 2px solid #000000
+
+			input[type="checkbox"]:focuse, .checkbox-indikator
+				border-color: #663d15
+				outline: thin dotted
+				outline: 5px auto -webkit-focuse-ring-color
+
+			input[type="checkbox"]:checked + .checkbox-indikator::before,
+
+				content: ""
+
+				position: absolute
+				top: 6px
+				left: 1px
+
+				width: 13px
+				height: 2px
+
+				background-color: #000000
+				transform: rotate(45deg)
+
+
+			input[type="checkbox"]:checked + .checkbox-indikator::after
+				content: ""
+
+				position: absolute
+				top: 6px
+				left: 1px
+
+				width: 13px
+				height: 2px
+
+				background-color: #000000
+				transform: rotate(-45deg)
+
+		.restore:hover, .restore:focus
+			text-decoration: none
+	.modal-submit
+		width: 100%
+		margin-right: 0
+.modal-close
+	position: absolute
+	top: 0
+	right: -34px
+	margin: 0
+	padding: 0
+
+	width: 22px
+	height: 22px
+
+	background-color: transparent
+	border: 0
+
+	cursor: pointer
+
+.modal-close::before, .modal-close::after
+	content: ""
+
+	position: absolute
+	top: 10px
+	left: 2px
+
+	width: 19px
+	height: 3px
+
+	background-color: #d0d0d0
+.modal-close::before
+	transform: rotate(45deg)
+.modal-close::after
+	transform: rotate(-45deg)
+
+.modal-map
+	top: 50%
+	left: 50%
+
+	display: none
+
+	width: 766px
+	height: 591px
+	margin-top: -280px
+	margin-left: -390px
+
+	border: 7px solid #ffffff
+
+	p
+		margin: 0
+
+
+// sass shop
+
+.shop-header, .main-shop, .shop-footer
+	color: #000000
+
+
+.shop-navigation
+	background-color: #000000
+	.container
+		display: flex
+		justify-content: space-between
+		align-items: center
+		min-height: 70px
+	&__site-list
+		display: flex
+		justify-content: space-around
+		flex-wrap: wrap
+		margin: 0
+		padding: 0
+		min-width: 656px
+	&__site-item
+		a
+			color: #ffffff
+	&__user-list
+		flex-wrap: wrap
+		margin: 0
+		padding: 0
+
+	&__user-item
+		position: relative
+		a
+			color: #ffffff
+
+	&__user-item-link::before
+			content: ""
+			position: absolute
+			top: 25px
+			right: 65px
+
+			width: 16px
+			height: 18px
+			padding: 0px
+
+			background-image: url(../img/svg/login.svg)
+			background-repeat: no-repeat
+			background-position: 0 0
+
+			opacity: 0.3
+	&__user-item-link
+		&:hover::before, &:focus::before, &:active::before
+			opacity: 1
+
+	&__site-item-link, &__user-item-link
+		display: block
+		padding: 20px
+		color: #ffffff
+		a:hover, a:focus
+			background-color: #500000
+
+.main-shop
+	padding-top: 65px
+	background-color: #f9f6f3
+	.wrap
+		display: flex
+
+	.header-shop
+		margin-bottom: 40px
+	.breadcrumbs
+		position: relative
+		display: flex
+		padding: 0
+		&__item--decor
+			padding-right: 40px
+		&__item--decor::after
+			content: ""
+			position: absolute
+
+			top: 8px
+
+			width: 8px
+			height: 8px
+
+			background-color: #000000
+			transform: translateX(15px) rotate(45deg)
+
+
+		&__link
+			color: #000000
+		&__link--active
+			color: #b5b3b1
+
+aside
+	min-width: 170px
+	margin: 0
+	padding: 0
+
+	.manufacturer
+		&__header
+			font-size: 24px;
+			line-height: 30px;
+			margin-bottom: 37px
+		&__list
+			padding: 0
+		&__item
+			input[type=checkbox]
+				transform: scale(1.5)
+			label
+				padding-left: 23px
+				line-height: 18px
+				margin-bottom: 17px
+
+	.group-goods
+		&__header
+			font-size: 24px;
+			line-height: 30px;
+		&__list
+				padding: 0
+		&__item
+			input[type=radio]
+				transform: scale(1.5)
+			label
+				padding-left: 23px
+				line-height: 18px
+				margin-bottom: 17px
+
+.goods
+	&__list
+		display: flex
+		flex-wrap: wrap
+		justify-content: space-between
+
+	&__item
+		align-items: center
+		width: 220px
+
+		margin-right: 20px
+		margin-bottom: 20px
+
+		background-color: #ffffff
+
+		a
+			img
+				margin-bottom: 16px
+	&__item--button-wrap
+		display: flex
+		flex-wrap: wrap
+		background-color: #e5e5e5
+		margin-bottom: 16px
+		.button
+			margin: 0
+	h4
+		font-size: 14px
+		font-weight: 700
+		line-height: 16px
+		padding-left: 15px
+
+	p
+		width: 109px
+		margin: 0
+		padding-top: 11px
+		padding-left: 37px
+
+	&__namber-list
+		display: flex
+		margin-bottom: 49px
+
+	&__namber-item
+
+		width: 43px
+		height: 43px
+		margin-right: 7px
+
+		text-align: center
+
+		background-color: #000000
+
+		&:hover, &:focus, &:active
+			background-color: #ffffff
+
+		a
+			display: block
+			padding: 10px
+			color: #ffffff
+		a:hover,
+			color: #000000
+.footer
+	padding: 0
+	padding-top: 60px
+	margin-top: 0
+
+
+// sass price
+
+.main-container
+	color: #000000
+	background-color: #f8f5f2
+	background-image: url("../img/pattern-light.png")
+	background-position: center
+	background-repeat: no-repeat
+
+	padding-bottom: 30px
+	padding-top: 55px
+
+	.inner-page-container
+		.page-title
+			font-size: 30px;
+			font-weight: 700;
+			line-height: 42px;
+		.breadcrumbs
+			position: relative
+			display: flex
+			padding: 0
+			li
+				padding-right: 32px
+				a
+					color: #000000
+					&::before
+						content: ""
+						position: absolute
+
+						top: 8px
+						left: 45px
+
+						width: 8px
+						height: 8px
+
+						background-color: #000000
+						transform: translateX(15px) rotate(45deg)
+			.breadcrumbs-current
+				color: #aba9a7
+
+	.inner-content
+		margin-bottom: 75px
+		h2
+			margin-top: 60px
+			margin-bottom: 30px
+
+			font-size: 24px
+			line-height: 30px
+		h2+h3
+			margin-top: 30px
+		.big-heading
+			display: flex
+			align-items: center
+
+			margin-top: 55px
+			margin-bottom: 65px
+
+			font-size: 48px
+			line-height: 48px
+			text-align: center
+			&::before, &::after
+				content: ""
+
+				flex-grow: 1
+				flex-shrink: 0
+
+				width: 50px
+				height: 2px
+
+				background-color: #000000
+			&::before
+				margin-right: 10px
+			&::after
+				margin-left: 10px
+		h3
+			margin-top: 60px
+			margin-bottom: 30px
+
+			font-size: 20px
+			line-height: 30px
+			font-weight: 700
+		p
+			margin: 14px 0
+
+		table
+			border-collapse: collapse
+			td
+				padding: 10px 15px
+
+				border: 2px solid #000000
+
+	.custom-list-1
+		margin: 14px 0
+		padding: 0
+
+		list-style: none
+
+		li
+			position: relative
+
+			margin-bottom: 15px
+			padding-left: 20px
+
+			&::before
+				content: ""
+
+				position: absolute
+				top: 8px
+				lef: 0
+
+				width: 8px
+				height: 8px
+
+				background-color: #000000
+				transform: translateX(-20px) rotate(45deg)
+
+	.custom-table-1
+		width: 100%
+		td
+			width: 50%
+
+			&:last-child
+				text-align: center
+
+	.inner-colums
+		display: flex
+		justify-content: space-between
+		flex-wrap: wrap
+
+		margin: 60px 0
+		&__left, &__right
+			width: 460px
+			p
+				width: 380px
+
+		&__left *:first-child, &__right *:first-child
+			margin-top: 0
+		&__left *:last-child, &__right *:last-child
+			margin-top: 0
+
+		& > h3:first-child
+			width: 460px
+			margin-top: 0
+			margin-right: 460px
+			margin-right: calc( 100% - 460px )
+
