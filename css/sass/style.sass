@@ -1,5 +1,7 @@
-@import "index.sass"
-@import "shop.sass"
+// @import "index.sass"
+// @import "shop.sass"
+// @import "price.sass"
+// @import "item.sass"
 
 body
 	margin: 0
@@ -98,6 +100,8 @@ ul, ol
 
 		.main-navigation-wrapper
 			width: 100%
+			min-height: 70px
+
 			.container
 				width: 940px
 				display: flex
@@ -136,8 +140,10 @@ ul, ol
 			display: block
 			padding: 25px 35px
 			color: #ffffff
-			a:hover, a:focus
-				background-color: #500000
+		
+		&__site-item-link:hover, &__user-item-link:hover, &__site-item-link:active, &__user-item-link:active
+			background-color: #242424
+			
 
 .feature
 	margin-bottom: 80px
@@ -289,28 +295,60 @@ ul, ol
 		flex-direction: column
 		text-align: center
 
-		.footer-social
-			&__list
-				display: flex
-				flex-wrap: wrap
-				text-align: center
-				list-style: none
-				padding: 0
-				margin: 0
-			&__item
-				color: #ffffff
-				width: 43px
-				height: 43px
-				background-color: #000000
-				margin: 6px
-				padding-top: 8px
+	&__social .footer-social
+		&__list
+			display: flex
+			flex-wrap: wrap
+			justify-content: space-between
+			margin: 0
+			padding: 0
+			padding-top: 15px
+			list-style-type: none
+		&__item
+			position: relative
+			display: block
 
+			width: 44px
+			height: 44px
+
+			margin-left: 6px	
+
+			background-color: #000000
+
+			&:hover
+				background-color: #ffffff
+
+		&__item-link::before
+			content: ""			
+			position: absolute			
+
+			width: 44px			
+			height: 44px
+			left: 0
+
+			background-repeat: no-repeat			
+			background-position: center center			
+
+		&__item-link--vk::before
+				background-image: url("../img/vk.svg")
+		&__item-link--vk:hover::before
+				background-image: url("../img/vk-black.svg")
+		&__item-link--fb::before
+				background-image: url("../img/facebook.svg")
+		&__item-link--fb:hover::before
+				background-image: url("../img/facebook-black.svg")
+		&__item-link--inst::before
+			background-image: url("../img/instagram.svg")
+		&__item-link--inst:hover::before
+			background-image: url("../img/instagram-black.svg")
+				
 	&__copyright
 		display: flex
 		flex-direction: column
 		text-align: center
 		padding: 0
 		margin: 0
+		padding-top: 10px
 		p
 			padding: 0
 			margin: 0
@@ -322,6 +360,10 @@ ul, ol
 			width: 140px
 			height: 43px
 
+			&:hover
+				background-color: #ffffff
+				color: #000000
+				border: 2px solid #000000
 	// sass index modal
 
 .modal
@@ -529,7 +571,7 @@ ul, ol
 			content: ""
 			position: absolute
 			top: 25px
-			right: 65px
+			right: 85px
 
 			width: 16px
 			height: 18px
@@ -546,10 +588,11 @@ ul, ol
 
 	&__site-item-link, &__user-item-link
 		display: block
-		padding: 20px
+		padding: 25px 33px
 		color: #ffffff
-		a:hover, a:focus
-			background-color: #500000
+	
+	&__site-item-link:hover, &__user-item-link:hover, &__site-item-link:active, &__user-item-link:active
+		background-color: #242424
 
 .main-shop
 	padding-top: 65px
