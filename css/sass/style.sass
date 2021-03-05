@@ -677,6 +677,8 @@ aside
 
 		background-color: #ffffff
 
+		box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+
 		a
 			img
 				margin-bottom: 16px
@@ -749,22 +751,24 @@ aside
 			position: relative
 			display: flex
 			padding: 0
-			li
+			li	
+				position: inherit
 				padding-right: 32px
 				a
 					color: #000000
-					&::before
+					&::after
 						content: ""
 						position: absolute
 
 						top: 8px
-						left: 45px
+						right: 25px
 
 						width: 8px
 						height: 8px
 
 						background-color: #000000
 						transform: translateX(15px) rotate(45deg)
+
 			.breadcrumbs-current
 				color: #aba9a7
 
@@ -874,3 +878,82 @@ aside
 			margin-right: 460px
 			margin-right: calc( 100% - 460px )
 
+
+/** sass item **/
+
+.main
+	min-height: 1162px
+.goods-colums
+	display: flex
+	min-width: 930px
+
+	&__left
+		margin-top: 60px
+
+	&__right
+		width:  420px
+		margin-left: 90px
+		margin-top: 85px	
+
+
+
+		.subheader
+			display: flex
+			justify-content: space-between
+			padding: 0
+
+			min-width: 114px
+			margin: 0
+			
+			.color
+				color: #b5b5b5
+		
+			
+
+		.goods-colums__right--text
+			padding: 0
+			margin: 40px 0 0 0
+			width: 100%
+			
+		.goods-colums__right--button-wrap
+			display: flex
+			margin-top: 40px
+			p
+				width: 110px
+				padding: 0
+				padding-top: 14px
+				margin: 0
+				text-align: center
+				background-color: #e5e5e5
+				
+
+	h3
+		margin-top: 67px
+		font-size: 24px
+		font-weight: 700
+		line-height: 30px
+
+	.custom-list-desc
+		margin-top: 38px
+		padding: 0
+
+		list-style: none
+
+		li
+			position: relative
+
+			margin-bottom: 3px
+			padding-left: 20px
+
+			&::before
+				content: ""
+
+				position: absolute
+				top: 8px
+				lef: 0
+
+				width: 8px
+				height: 8px
+
+				background-color: #000000
+				transform: translateX(-20px) rotate(45deg)
